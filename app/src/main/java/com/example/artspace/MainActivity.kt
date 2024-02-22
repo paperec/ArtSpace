@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,9 +20,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.artspace.ui.theme.ArtSpaceTheme
 
 class MainActivity : ComponentActivity() {
@@ -52,13 +59,31 @@ fun Distribucion(modifier: Modifier = Modifier){
         Box(modifier = Modifier
             .padding(30.dp)
             .align(Alignment.CenterHorizontally)
+            .background(Color.LightGray)
         ){
             Column {
-                Text(text = "a")
-                Text(text = "b")
+                Text(
+                    text = "Sailing Under the Bridge",
+                    fontStyle = FontStyle.Italic,
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 15.sp,
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                )
+                Text(
+                    text = "Kat Kuan (2017)",
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Monospace,
+                    fontSize = 10.sp,
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                )
             }
         }
-        Row {
+        Row (
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+        ){
             Button(
                 onClick = { /*TODO*/ }
             ){
